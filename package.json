@@ -1,5 +1,5 @@
 {
-  "name": "generator-ffbt-init",
+  "name": "ffbt-init",
   "version": "1.0.0",
   "description": "Bootstrap the web app with FFBT",
   "repository": {
@@ -12,6 +12,9 @@
     "url": "https://github.com/fluix/ffbt-init/issues"
   },
   "homepage": "https://github.com/fluix/ffbt-init#readme",
+  "bin": {
+    "ffbt-init": "./index.js"
+  },
   "dependencies": {
     "yeoman-environment": "^2.6.0",
     "yeoman-generator": "^4.2.0"
