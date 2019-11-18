@@ -1,3 +1,4 @@
+const path = require("path");
 const Generator = require("yeoman-generator");
 
 const templatesToCopy = [
@@ -11,6 +12,18 @@ const templatesToCopy = [
 ];
 
 module.exports = class extends Generator {
+    constructor(args, opts) {
+        super(args, opts);
+
+        this.argument("destination", { type: String, required: false });
+    }
+
+    initializing() {
+        if (this.options.destination) {
+            this.destinationRoot(path.resolve(this.contextRoot, this.options.destination));
+        }
+    }
+
     async prompting() {
         this.answers = await this.prompt([
             {
